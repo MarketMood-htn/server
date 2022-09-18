@@ -12,7 +12,7 @@ def analyzeSentiment(article,link):
             model='finance-sentiment',
             inputs=[article])
         confidence = response.classifications[0].confidence
-        results = {'link': link, "prediction": response.classifications[0].prediction, confidence[0].label: confidence[0].confidence,
-                confidence[1].label: confidence[1].confidence, confidence[2].label: confidence[2].confidence}
+        results = {'link': link, "prediction": response.classifications[0].prediction, confidence[0].label.lower(): confidence[0].confidence,
+                confidence[1].label.lower(): confidence[1].confidence, confidence[2].label.lower(): confidence[2].confidence}
         return results
     except Exception as e: print(e)

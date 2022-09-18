@@ -25,8 +25,6 @@ def runScan():
             text[article] = getArticleText(article)
             sentiment = analyzeSentiment(text[article],article)
             articleInfo.append(sentiment)
-            # print(sentiment)
-            # Create Object
             # TO DO Store in database
         stockInfo['news'] = articleInfo
         print(stockInfo)
@@ -37,5 +35,3 @@ scheduler.start()
 
 # Shut down the scheduler when exiting the app
 atexit.register(lambda: scheduler.shutdown())
-
-
