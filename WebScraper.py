@@ -15,11 +15,12 @@ def getNewsLinksFromGoogleNews(result):
         urls = []
         for link in result.findAll('a'):
             if("https" in link.get('href') and not ("google" in link.get('href'))):
-                urls.append(link.get('href').replace("/url?q=",""))
+                l = link.get('href').replace("/url?q=","").split("&sa=U")[0]
+                urls.append(l)
         return urls
     except:
         print("An error has occured extracting links from Google News")
-
+    
 def getArticleText(url):
     try:
         content = ""
