@@ -29,5 +29,3 @@ def getArticleText(url):
             content+=text.get_text().strip() + " "
         return content
     except Exception as e: print(e)
-        
-        # print("An error has occured retriving or extracting text from news article")
